@@ -46,6 +46,8 @@ public class AddNewBook extends BottomSheetDialogFragment {
     private EditText editTextTitulo;
     private EditText editTextAutor;
     private EditText editTextEditorial;
+    private EditText editTextPrecio;
+    private EditText newCategoriaText;
     private EditText editTextAño;
     private Button imageButton;
     private ImageView imageView;
@@ -81,6 +83,8 @@ public class AddNewBook extends BottomSheetDialogFragment {
         editTextTitulo = Objects.requireNonNull(getView()).findViewById(R.id.newTitleText);
         editTextAutor = Objects.requireNonNull(getView()).findViewById(R.id.newAutorText);
         editTextEditorial = Objects.requireNonNull(getView()).findViewById(R.id.newEditorialText);
+        editTextPrecio = Objects.requireNonNull(getView()).findViewById(R.id.newPrecioText);
+        newCategoriaText = Objects.requireNonNull(getView()).findViewById(R.id.newCategoriaText);
         editTextAño = Objects.requireNonNull(getView()).findViewById(R.id.newAñoText);
         imageButton = getView().findViewById(R.id.imageButton);
         imageView = getView().findViewById(R.id.imageView);
@@ -94,12 +98,16 @@ public class AddNewBook extends BottomSheetDialogFragment {
             String titulo = bundle.getString("titulo");
             String autor = bundle.getString("autor");
             String editorial = bundle.getString("editorial");
+            String precio = bundle.getString("precio");
+            String categoria = bundle.getString("categoria");
             String año = bundle.getString("año");
             String imagen = bundle.getString("imagen");
 
             editTextTitulo.setText(titulo);
             editTextAutor.setText(autor);
             editTextEditorial.setText(editorial);
+            editTextPrecio.setText(precio);
+            newCategoriaText.setText(categoria);
             editTextAño.setText(año);
 
             assert titulo != null;
@@ -152,6 +160,8 @@ public class AddNewBook extends BottomSheetDialogFragment {
                 String titulo = editTextTitulo.getText().toString();
                 String autor = editTextAutor.getText().toString();
                 String editorial = editTextEditorial.getText().toString();
+                String precio = editTextPrecio.getText().toString();
+                String categoria = newCategoriaText.getText().toString();
                 String año = editTextAño.getText().toString();
 
 
@@ -163,6 +173,8 @@ public class AddNewBook extends BottomSheetDialogFragment {
                     person.setTitulo(titulo);
                     person.setAutor(autor);
                     person.setEditorial(editorial);
+                    person.setPrecio(precio);
+                    person.setCategoria(categoria);
                     person.setAño(año);
                     person.setImagen(uriImage);
                     db.insertBook(person);

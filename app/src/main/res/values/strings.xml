@@ -4,6 +4,8 @@
     <string name="new_title">Nuevo titulo</string>
     <string name="new_autor">Nuevo autor</string>
     <string name="new_editorial">Nuevo editorial</string>
+    <string name="new_precio">Nuevo precio</string>
+    <string name="new_categoria">Nueva categoria</string>
     <string name="new_año">Nuevo año</string>
     <string name="new_imagen">Nueva imagen</string>
     <string name="tasks">Libros</string>

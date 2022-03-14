@@ -20,6 +20,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String TITULO = "titulo";
     private static final String AUTOR = "autor";
     private static final String EDITORIAL = "editorial";
+    private static final String PRECIO = "precio";
+    private static final String CATEGORIA = "categoria";
     private static final String AÑO = "año";
     private static final String IMAGEN = "imagen";
     private static final String STATUS = "status";
@@ -28,6 +30,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             TITULO + " TEXT, " +
             AUTOR + " TEXT, " +
             EDITORIAL + " TEXT, " +
+            PRECIO + " TEXT, " +
+            CATEGORIA + " TEXT, " +
             IMAGEN + " TEXT, " +
             AÑO + " TEXT)";
 
@@ -59,6 +63,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cv.put(TITULO, person.getTitulo());
         cv.put(AUTOR, person.getAutor());
         cv.put(EDITORIAL, person.getEditorial());
+        cv.put(PRECIO, person.getEditorial());
+        cv.put(CATEGORIA, person.getEditorial());
         cv.put(AÑO, person.getAño());
         cv.put(IMAGEN, person.getImagen());
         db.insert(TODO_TABLE, null, cv);
@@ -78,6 +84,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         book.setTitulo(cur.getString(cur.getColumnIndex(TITULO)));
                         book.setAutor(cur.getString(cur.getColumnIndex(AUTOR)));
                         book.setEditorial(cur.getString(cur.getColumnIndex(EDITORIAL)));
+                        book.setEditorial(cur.getString(cur.getColumnIndex(PRECIO)));
+                        book.setEditorial(cur.getString(cur.getColumnIndex(CATEGORIA)));
                         book.setAño(cur.getString(cur.getColumnIndex(AÑO)));
                         book.setImagen(cur.getString(cur.getColumnIndex(IMAGEN)));
                         bookList.add(book);
@@ -105,6 +113,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cv.put(TITULO,titulo);
         cv.put(AUTOR, autor);
         cv.put(EDITORIAL, editorial);
+        cv.put(PRECIO, editorial);
+        cv.put(CATEGORIA, editorial);
         cv.put(AÑO, año);
         cv.put(IMAGEN, uriImage);
         db.update(TODO_TABLE, cv, ID + "= ?", new String[] {String.valueOf(id)});

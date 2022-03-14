@@ -2,7 +2,7 @@ package net.penguincoders.doit.Model;
 
 public class BookModel {
     private int id;
-    private String titulo, autor, editorial, año, imagen;
+    private String titulo, autor, editorial, precio, categoria, año, imagen;
 
     public int getId() {
         return id;
@@ -34,6 +34,22 @@ public class BookModel {
 
     public void setEditorial(String editorial) {
         this.editorial = editorial;
+    }
+
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public String getAño() {
